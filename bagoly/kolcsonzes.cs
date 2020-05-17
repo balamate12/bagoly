@@ -27,8 +27,6 @@ namespace bagoly
             string num = Convert.ToString(numericUpDown1_darab.Value);
             DateTime thisDate1 = DateTime.Now;
 
-
-
             string konyvid = "";
             string kolcsonzoid = "";
 
@@ -67,7 +65,7 @@ namespace bagoly
             {
                 comboBox1_konyvek.Items.Add(item.Cim);
             }
-            //-- Bérlő adatainak a betöltése ---------------
+            
             foreach (Berlo item in Program.berlok)
             {
                 comboBox2_kolcsonzo.Items.Add(item.Nev);
@@ -78,15 +76,16 @@ namespace bagoly
         {
             foreach (var item in listaadatok)
             {
-                string[] split = item.Split(';');
-                Program.command.CommandText = "INSERT INTO `kolcsonzes` (`konyvID`, `kolcsonzoID`, `kivetelDatum`, `peldany`) VALUES (@konyvID, @kolcsonzoID, @kivetelDatum, @pld);";
-                Program.command.Parameters.AddWithValue("@konyvID", split[0]);
-                Program.command.Parameters.AddWithValue("@kolcsonzoID", Convert.ToInt32(split[1]));
-                Program.command.Parameters.AddWithValue("@kivetelDatum", split[2]);
-                Program.command.Parameters.AddWithValue("@pld", Convert.ToInt32(split[3]));
 
                 try
                 {
+                    string[] split = item.Split(';');
+                    Program.command.CommandText = "INSERT INTO `kolcsonzes` (`konyvID`, `kolcsonzoID`, `kivetelDatum`, `peldany`) VALUES (@konyvID, @kolcsonzoID, @kivetelDatum, @pld);";
+                    Program.command.Parameters.Clear();
+                    Program.command.Parameters.AddWithValue("@konyvID", split[0]);
+                    Program.command.Parameters.AddWithValue("@kolcsonzoID", Convert.ToInt32(split[1]));
+                    Program.command.Parameters.AddWithValue("@kivetelDatum", split[2]);
+                    Program.command.Parameters.AddWithValue("@pld", Convert.ToInt32(split[3]));
                     Program.command.ExecuteNonQuery();
                 }
                 catch (MySqlException ex)
