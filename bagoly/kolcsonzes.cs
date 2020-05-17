@@ -87,13 +87,14 @@ namespace bagoly
                     Program.command.Parameters.AddWithValue("@kivetelDatum", split[2]);
                     Program.command.Parameters.AddWithValue("@pld", Convert.ToInt32(split[3]));
                     Program.command.ExecuteNonQuery();
+                    MessageBox.Show("A listában szereplő adatokat sikeresen kiírtam az adatbázisba!");
+
                 }
                 catch (MySqlException ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
             }
-            MessageBox.Show("A listában szereplő adatokat sikeresen kiírtam az adatbázisba!");
             listBox1_lista.Items.Clear();
         }
     }

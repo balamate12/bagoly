@@ -42,6 +42,7 @@
             this.listBox1_kesok.Name = "listBox1_kesok";
             this.listBox1_kesok.Size = new System.Drawing.Size(296, 372);
             this.listBox1_kesok.TabIndex = 0;
+            this.listBox1_kesok.SelectedIndexChanged += new System.EventHandler(this.ListBox1_kesok_SelectedIndexChanged);
             // 
             // comboBox1_nev
             // 
