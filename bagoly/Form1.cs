@@ -22,5 +22,11 @@ namespace bagoly
             kolcsonzes nyit = new kolcsonzes();
             nyit.Show();
         }
+
+        private void Button3_kesesek_Click(object sender, EventArgs e)
+        {
+            kesesek nyit = new kesesek();
+            nyit.Show();
+        }
     }
 }

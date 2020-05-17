@@ -60,6 +60,7 @@
             this.button3_kesesek.TabIndex = 2;
             this.button3_kesesek.Text = "Késések";
             this.button3_kesesek.UseVisualStyleBackColor = true;
+            this.button3_kesesek.Click += new System.EventHandler(this.Button3_kesesek_Click);
             // 
             // Form1
             // 

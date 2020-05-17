@@ -54,6 +54,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="kesesek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kesesek.Designer.cs">
+      <DependentUpon>kesesek.cs</DependentUpon>
+    </Compile>
     <Compile Include="kolcsonzes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +71,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kesesek.resx">
+      <DependentUpon>kesesek.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="kolcsonzes.resx">
       <DependentUpon>kolcsonzes.cs</DependentUpon>
